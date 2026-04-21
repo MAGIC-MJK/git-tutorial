@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo 应用</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="todo-card" aria-labelledby="app-title">
+        <div class="hero">
+          <p class="eyebrow">Daily Planner</p>
+          <h1 id="app-title">Todo 应用</h1>
+          <p class="subtitle">记录任务、标记完成、清理待办，让每一天更有条理。</p>
+        </div>
+
+        <form id="todo-form" class="todo-form" autocomplete="off">
+          <input
+            id="todo-input"
+            name="todo"
+            type="text"
+            placeholder="添加一个新任务..."
+            aria-label="待办事项内容"
+            maxlength="80"
+          />
+          <button type="submit">添加</button>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" role="tablist" aria-label="任务筛选">
+            <button class="filter active" data-filter="all" type="button">全部</button>
+            <button class="filter" data-filter="active" type="button">进行中</button>
+            <button class="filter" data-filter="completed" type="button">已完成</button>
+          </div>
+          <button id="clear-completed" class="ghost-button" type="button">清除已完成</button>
+        </div>
+
+        <div class="stats">
+          <span id="task-count">0</span>
+          <span>项任务</span>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+        <p id="empty-state" class="empty-state">暂无任务，先添加一个吧。</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
